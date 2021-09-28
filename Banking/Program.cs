@@ -27,6 +27,7 @@ namespace Banking
 
             acct1.Withdraw(-1000);
             acct1.Print();
+            acct1.Deposit(-500);
             //if amount to deposit or withdraw is negative it will be wrong fix that so you cant withdraw or deposit
         }
     }

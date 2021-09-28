@@ -14,6 +14,11 @@ namespace Banking
 
         public bool Deposit(decimal amount)
         {
+            if (amount < 0)
+            {
+                Console.WriteLine("Invalid amount");
+                return false;
+            }
             this.Balance = this.Balance + amount;
             return true;
         }
@@ -22,6 +27,11 @@ namespace Banking
             if (amount > this.Balance)
             {
                 Console.WriteLine("Insufficient funds!");
+                return false;
+            }
+            else if (amount < 0)
+            {
+                Console.WriteLine("Invalid amount");
                 return false;
             }
             this.Balance = this.Balance - amount;
