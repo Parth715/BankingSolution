@@ -16,8 +16,7 @@ namespace Banking
         {
             if (amount <= 0)
             {
-                Console.WriteLine("Invalid amount");
-                return false;
+                throw new AmountGreaterThanZeroException();
             }
             this.Balance = this.Balance + amount;
             return true;
@@ -26,13 +25,11 @@ namespace Banking
         {
             if (amount > this.Balance)
             {
-                Console.WriteLine("Insufficient funds!");
-                return false;
+                throw new InsufficientFundsException(this.Balance, amount);
             }
-            else if (amount <= 0)
+            if (amount <= 0)
             {
-                Console.WriteLine("Invalid amount");
-                return false;
+                throw new AmountGreaterThanZeroException();
             }
             this.Balance = this.Balance - amount;
             return true;

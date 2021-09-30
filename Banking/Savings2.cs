@@ -37,7 +37,7 @@ namespace Banking
         }
         public bool Withdraw(decimal amount)
         {
-            return this.account.Deposit(amount);
+            return this.account.Withdraw(amount);
         }
         public bool Transfer(decimal amount, Account ToAccount)
         {
